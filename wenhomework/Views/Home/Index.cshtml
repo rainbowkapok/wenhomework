@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="MyUl"></div>
+
+<h1>HomeWork</h1>
+@section Scripts{
+    <script src="~/js/travel.js"></script>
+    <script>
+        console.log(DATAS.length)
+        const Frag = document.createDocumentFragment()
+        const TheUl = document.querySelector("#MyUl")
+        for (let i = 0, max = DATAS.length; i < max; i++) {
+            const { Name, Add, Opentime, Tel } = DATAS[i]
+            const ele = document.createElement("li")
+            const txt = document.createTextNode(Name + "," + Tel)
+            ele.appendChild(txt)
+            Frag.appendChild(ele)
+        }
+        TheUl.appendChild(Frag)
+    </script>
+
+}
+
